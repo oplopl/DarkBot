@@ -15,7 +15,7 @@ public class SetWalkCommand extends AbstractCommand {
 
 	@Override
 	public void execute(String[] args) {
-		controller.say("Set walk settings!");
+		controller.say("/msg " + controller.getOwners()[0] + " Set walk settings!");
 		WalkActivity.setDefaultSpeed(Double.parseDouble(args[0]));
 		if(args.length == 1)
 			return;

@@ -18,12 +18,13 @@ public class DropIdCommand extends AbstractCommand {
 		int id = Integer.parseInt(args[0]);
 		for(int slot = 0; slot < 40; slot++) {
 			ItemStack item = inventory.getItemAt(slot);
+			System.out.println(item != null ? item.getId() : "null");
 			if(item != null && item.getId() == id) {
 				inventory.selectItemAt(slot, true);
 				inventory.dropSelectedItem();
 			}
 		}
 		inventory.close();
-		controller.say("Dropped all items of ID " + id + "!");
+		controller.say("/msg " + controller.getOwners()[0] + " Dropped all items of ID " + id + "!");
 	}
 }

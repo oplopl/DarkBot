@@ -63,7 +63,7 @@ public class ChatBackend implements Backend, EventListener {
 					error.append(": ");
 				error.append(e.getMessage());
 			}
-			bot.getBot().say(error.toString());
+			bot.getBot().say("/msg " + bot.getOwners()[0] + " " + error.toString());
 		}
 	}
 

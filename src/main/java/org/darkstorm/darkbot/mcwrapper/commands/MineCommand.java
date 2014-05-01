@@ -14,10 +14,10 @@ public class MineCommand extends AbstractCommand {
 		MiningTask task = bot.getTaskManager().getTaskFor(MiningTask.class);
 		if(task.isActive()) {
 			task.stop();
-			controller.say("No longer mining.");
+			controller.say("/msg " + controller.getOwners()[0] + " No longer mining.");
 		} else {
 			task.start();
-			controller.say("Now mining!");
+			controller.say("/msg " + controller.getOwners()[0] + " Now mining!");
 		}
 	}
 }

@@ -16,7 +16,7 @@ public class DropCommand extends AbstractCommand {
 		PlayerInventory inventory = player.getInventory();
 		int slot = Integer.parseInt(args[0]);
 		if(slot < 0 || slot >= 40) {
-			controller.say("Invalid slot.");
+			controller.say("/msg " + controller.getOwners()[0] + " Invalid slot.");
 			return;
 		}
 		if(inventory.getItemAt(slot) != null) {

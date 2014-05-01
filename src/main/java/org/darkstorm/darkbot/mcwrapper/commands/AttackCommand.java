@@ -14,19 +14,14 @@ public class AttackCommand extends AbstractCommand {
 	@Override
 	public void execute(String[] args) {
 		String name = args[0];
-		AttackTask attackTask = bot.getTaskManager().getTaskFor(
-				AttackTask.class);
+		AttackTask attackTask = bot.getTaskManager().getTaskFor(AttackTask.class);
 		for(Entity entity : bot.getWorld().getEntities()) {
-			if(entity instanceof PlayerEntity
-					&& Util.stripColors(((PlayerEntity) entity).getName())
-							.equalsIgnoreCase(name)) {
+			if(entity instanceof PlayerEntity && Util.stripColors(((PlayerEntity) entity).getName()).equalsIgnoreCase(name)) {
 				attackTask.setAttackEntity(entity);
-				controller.say("Attacking "
-						+ Util.stripColors(((PlayerEntity) entity).getName())
-						+ "!");
+				controller.say("/msg " + controller.getOwners()[0] + " Attacking " + Util.stripColors(((PlayerEntity) entity).getName()) + "!");
 				return;
 			}
 		}
-		controller.say("Player " + name + " not found.");
+		controller.say("/msg " + controller.getOwners()[0] + " Player " + name + " not found.");
 	}
 }

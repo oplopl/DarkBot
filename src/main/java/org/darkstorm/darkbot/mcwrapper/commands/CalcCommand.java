@@ -15,9 +15,9 @@ public class CalcCommand extends AbstractCommand {
 	public void execute(String[] args) {
 		String text = Util.join(args, " ");
 		try {
-			bot.say("Result: " + eval(text));
+			bot.say("/msg " + controller.getOwners()[0] + " Result: " + eval(text));
 		} catch(Exception exception) {
-			bot.say("Error: " + exception.getMessage());
+			bot.say("/msg " + controller.getOwners()[0] + " Error: " + exception.getMessage());
 		}
 	}
 

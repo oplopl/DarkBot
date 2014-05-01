@@ -67,6 +67,11 @@ public class CLIBotWrapper extends MinecraftBotWrapper {
 		commandManager.register(new ToolCommand(this));
 		commandManager.register(new WalkCommand(this));
 		commandManager.register(new DerpCommand(this));
+
+		// My Shit
+		taskManager.registerTask(new JailMineTask(bot));
+
+		commandManager.register(new JailMineCommand(this));
 	}
 
 	public static void main(String[] args) {

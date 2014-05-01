@@ -55,9 +55,7 @@ public class FollowTask implements Task {
 		BlockLocation location = new BlockLocation(following.getLocation());
 		if(lastLocation == null || !lastLocation.equals(location)) {
 			lastLocation = location;
-			System.out.println("Checking location " + location);
 			World world = bot.getWorld();
-			System.out.println(world.getChunkAt(new ChunkLocation(location)));
 			BlockLocation original = location;
 			BlockLocation below = location.offset(0, -1, 0);
 			while(!BlockType.getById(world.getBlockIdAt(below)).isSolid() && !world.getPathFinder().getWorldPhysics().canClimb(below)) {

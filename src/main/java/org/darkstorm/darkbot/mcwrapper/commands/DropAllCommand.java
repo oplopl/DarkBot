@@ -21,6 +21,6 @@ public class DropAllCommand extends AbstractCommand {
 			}
 		}
 		inventory.close();
-		controller.say("Dropped all items!");
+		controller.say("/msg " + controller.getOwners()[0] + " Dropped all items!");
 	}
 }

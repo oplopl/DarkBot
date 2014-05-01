@@ -153,7 +153,9 @@ public enum BlockType {
 	POTATO(142, PLACEABLE),
 	WOOD_BUTTON(143, INTERACTABLE | PLACEABLE, AXE),
 	SKULL(144),
-	ANVIL(145, PICKAXE);
+	ANVIL(145, PICKAXE),
+	QUARTZ_BLOCK(155, PICKAXE),
+	COAL_BLOCK(173, PICKAXE);
 
 	private final int id, maxStack, flags;
 	private final ToolType toolType;
