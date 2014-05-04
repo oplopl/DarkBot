@@ -152,10 +152,10 @@ public class ChestInventory implements Inventory {
 		}
 		boolean slotFound = false;
 		for(int i = rangeStart; i < rangeEnd; i++) {
-			if(items[i] == null) {
+			if((slot < items.length ? inventory[i - items.length] : items[i]) == null) {
 				if(slot < items.length) {
 					items[slot] = null;
-					inventory[slot - items.length] = item;
+					inventory[i - items.length] = item;
 				} else {
 					items[i] = item;
 					inventory[slot - items.length] = null;
